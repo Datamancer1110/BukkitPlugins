@@ -1,0 +1,10 @@
+name: RightClickGivesItem
+description: Right Click a block and get an item
+author: Datamancer
+website: http://www.war-torn.net/forums/index.php
+main: com.tofurkishrobocracy.rightclickgivesitem.RightClickGivesItemPlugin
+version: ${version}
+commands:
+  rightclickgivesitem:
+    description: Accesses the right-click gives item admin interface
+    usage: "Usage: '/rightclickgivesitem help'"
