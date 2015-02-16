@@ -1,0 +1,6 @@
+com\tofurkishrobocracy\makewall\MakeWallPlugin.class
+com\tofurkishrobocracy\makewall\DimensionSet.class
+com\tofurkishrobocracy\makewall\PlayerListener.class
+com\tofurkishrobocracy\makewall\CommandExecutor.class
+com\tofurkishrobocracy\makewall\asynch\DrawDimensionSet2D.class
+com\tofurkishrobocracy\makewall\asynch\DrawDimensionSet3D.class

@@ -1,0 +1,10 @@
+name: Dig Hole
+description: Such hole. So dig. Wow.
+author: KungfuJoe
+website: http://www.war-torn.net/forums/index.php
+main: com.tofurkishrobocracy.dighole.DigHolePlugin
+version: ${version}
+commands:
+  dighole:
+    description: Allows you to dig a big hole
+    usage: "Usage: '/dighole help'"

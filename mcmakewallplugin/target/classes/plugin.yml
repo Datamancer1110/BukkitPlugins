@@ -1,0 +1,10 @@
+name: Make Wall
+description: Such wall. So make. Wow.
+author: KungfuJoe
+website: http://www.war-torn.net/forums/index.php
+main: com.tofurkishrobocracy.makewall.MakeWallPlugin
+version: 0.1
+commands:
+  makewall:
+    description: Allows you to make a big wall
+    usage: "Usage: '/makewall help'"

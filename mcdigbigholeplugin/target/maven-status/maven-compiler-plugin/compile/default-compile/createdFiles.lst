@@ -1,0 +1,6 @@
+com\tofurkishrobocracy\dighole\CommandExecutor.class
+com\tofurkishrobocracy\dighole\DigHolePlugin.class
+com\tofurkishrobocracy\dighole\asynch\DrawDimensionSet2D.class
+com\tofurkishrobocracy\dighole\PlayerListener.class
+com\tofurkishrobocracy\dighole\asynch\DrawDimensionSet3D.class
+com\tofurkishrobocracy\dighole\DimensionSet.class
