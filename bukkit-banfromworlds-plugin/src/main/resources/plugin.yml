@@ -1,0 +1,7 @@
+name: Ban From Worlds
+description: If players die in certain worlds, they are banned from them for some time
+author: Datamancer
+website: http://www.war-torn.net/forums/index.php
+main: com.tofurkishrobocracy.banfromworlds.BanFromWorlds
+version: ${version}
+depend: [Multiverse-Core]
