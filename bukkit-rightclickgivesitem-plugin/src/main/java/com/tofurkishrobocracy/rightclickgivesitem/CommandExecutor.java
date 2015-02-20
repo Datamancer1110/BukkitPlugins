@@ -27,10 +27,11 @@ public class CommandExecutor implements org.bukkit.command.CommandExecutor {
                 if (args.length > 0) {
                     String arg = args[0].toLowerCase().trim();
                     if (arg.equals("help")) {
-                        sender.sendMessage("do '/rightclickgivesitem setdrop <ITEMNAME>' to change the item dropped. "
-                                + "do '/rightclickgivesitem setblock <BLOCKNAME>' to set the clickable block. "
-                                + "do '/rightclickgivesitem destroy [true/false]' to set block destruction on or off. "
-                                + "do '/rightclickgivesitem cancel [true/false]' to set right-click normal event cancellation on or off. ");
+                        sender.sendMessage("do '/rightclickgivesitem setdrop <ITEMNAME>' to change the item dropped. \n"
+                                + "do '/rightclickgivesitem setblock <BLOCKNAME>' to set the clickable block. \n"
+                                + "do '/rightclickgivesitem destroy [true/false]' to set block destruction on or off. \n"
+                                + "do '/rightclickgivesitem cancel [true/false]' to set right-click normal event cancellation on or off. \n"
+                                + "do '/rightclickgivesitem delay <time in seconds>' to set delay (in seconds) between right-clicks giving items. ");
                         return true;
                     } else if (arg.equals("setdrop")) {
                         if (args.length == 1) {
@@ -89,6 +90,21 @@ public class CommandExecutor implements org.bukkit.command.CommandExecutor {
                                 plugin.saveConfig();
                             } else {
                                 sender.sendMessage("'" + arg2 + "' must be 'true' or 'false'");
+                            }
+                            return true;
+                        }
+                    } else if (arg.equals("delay")) {
+                        if (args.length == 1) {
+                            return false;
+                        } else {
+                            String arg2 = args[1].trim().toLowerCase();
+                            try {
+                                int delay = Math.max(Integer.parseInt(arg2), 0);
+                                plugin.delayInSeconds = delay;
+                                plugin.getConfig().set("delay_between_clicks_in_seconds", arg2);
+                                plugin.saveConfig();
+                            } catch (NumberFormatException ex) {
+                                sender.sendMessage("'" + arg2 + "' must be a number");
                             }
                             return true;
                         }

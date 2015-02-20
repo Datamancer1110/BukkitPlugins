@@ -19,6 +19,7 @@ public class RightClickGivesItemPlugin extends JavaPlugin {
     public Material block = Material.getMaterial("YELLOW_FLOWER");
     public boolean destroy = false;
     public boolean cancel = true;
+    public int delayInSeconds = 0;
 
     @Override
     public void onEnable() {
@@ -31,6 +32,7 @@ public class RightClickGivesItemPlugin extends JavaPlugin {
             drop = Material.getMaterial(getConfig().getString("item_to_give"));
             destroy = getConfig().getBoolean("destroy_block_on_right_click");
             cancel = getConfig().getBoolean("cancel_normal_right_click_event");
+            delayInSeconds = Math.max(getConfig().getInt("delay_between_clicks_in_seconds"), 0);
         } catch (Exception ex) {
             throw new RuntimeException("Failed to Enable RightClickGivesItem", ex);
         }

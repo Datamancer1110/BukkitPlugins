@@ -2,3 +2,4 @@ block_type_that_gives_items: YELLOW_FLOWER
 item_to_give: GOLD_ORE
 destroy_block_on_right_click: false
 cancel_normal_right_click_event: true
+delay_between_clicks_in_seconds: 5

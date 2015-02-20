@@ -2,7 +2,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.tofurkishrobocracy</groupId>
     <artifactId>bukkit-rightclickgivesitem-plugin</artifactId>
-    <version>0.1</version>
+    <version>1.1</version>
     <name>Bukkit Right Click Gives Item Plugin</name>
     <url>http://www.bukkit.org</url>
 

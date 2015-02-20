@@ -111,8 +111,4 @@ public class PlayerListener implements Listener {
             }
         }
     }
-
-    public long secondsToTicks(long seconds) {
-        return 20 * seconds;
-    }
 }
