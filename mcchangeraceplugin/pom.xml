@@ -1,58 +1,43 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.tofurkishrobocracy</groupId>
-    <artifactId>bukkit-rightclickgivesitem-plugin</artifactId>
-    <version>1.2</version>
-    <name>Bukkit Right Click Gives Item Plugin</name>
+    <artifactId>bukkit-changerace-plugin</artifactId>
+    <version>0.2</version>
+    <name>BukkitChangeRacePlugin</name>
     <url>http://www.bukkit.org</url>
 
     <repositories>
-        <!--<repository>
+        <repository>
             <id>bukkit-repo</id>
             <url>http://repo.bukkit.org/content/groups/public</url>
-        </repository>-->
-        <repository>
-            <id>spigot-repo</id>
-            <url>https://hub.spigotmc.org/nexus/content/groups/public/</url>
         </repository>
-        <!--<repository>
+        <repository>
             <id>remote-repos</id>
             <url>http://repo.sacredlabyrinth.net:8081/artifactory/remote-repos</url>
         </repository>
         <repository>
             <id>gravity-repo</id>
             <url>http://repo.gravitydevelopment.net/</url>
-        </repository>-->
-        <!-- Multiverse Repo -->
-        <!--<repository>
-            <id>onarandombox</id>
-            <url>http://repo.onarandombox.com/content/groups/public</url>
-        </repository>-->
+        </repository>
     </repositories>
 
     <dependencies>
         <dependency>
             <groupId>org.bukkit</groupId>
-            <artifactId>bukkit</artifactId>
-            <version>1.8-R0.1-SNAPSHOT</version>
+            <artifactId>craftbukkit</artifactId>
+            <version>1.7.2-R0.2</version>
             <type>jar</type>
         </dependency>
-        <!--<dependency>
-            <groupId>com.onarandombox.multiversecore</groupId>
-            <artifactId>Multiverse-Core</artifactId>
-            <version>2.5</version>
+        <dependency>
+            <groupId>net.sacredlabyrinth.Phaed</groupId>
+            <artifactId>PreciousStones</artifactId>
+            <version>9.6.5</version>
             <type>jar</type>
-            <exclusions>
-                <exclusion>
-                    <artifactId>craftbukkit</artifactId>
-                    <groupId>org.bukkit</groupId>
-                </exclusion>
-            </exclusions>
-        </dependency>-->
+        </dependency>
     </dependencies>
 
     <build>
-        <finalName>RightClickGivesItem</finalName>
+        <finalName>ChangeRace</finalName>
         <resources>
             <resource>
                 <directory>src/main/resources</directory>

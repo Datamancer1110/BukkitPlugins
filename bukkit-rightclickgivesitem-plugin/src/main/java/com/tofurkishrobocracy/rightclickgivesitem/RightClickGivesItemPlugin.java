@@ -4,7 +4,13 @@
  */
 package com.tofurkishrobocracy.rightclickgivesitem;
 
+import com.tofurkishrobocracy.rightclickgivesitem.persistance.PlayerPersistence;
+import com.tofurkishrobocracy.rightclickgivesitem.persistance.RightClickGivesItemPersistence;
+import com.tofurkishrobocracy.rightclickgivesitem.persistance.impl.RightClickGivesItemPersistenceImpl;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
+import javax.persistence.PersistenceException;
 import org.bukkit.Material;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -20,10 +26,13 @@ public class RightClickGivesItemPlugin extends JavaPlugin {
     public boolean destroy = false;
     public boolean cancel = true;
     public int delayInSeconds = 0;
+    public RightClickGivesItemPersistence persistence;
 
     @Override
     public void onEnable() {
         instance = this;
+        persistence = new RightClickGivesItemPersistenceImpl(this);
+        setupDatabase();
         getConfig().options().copyDefaults(true);
         saveConfig();
         try {
@@ -61,5 +70,25 @@ public class RightClickGivesItemPlugin extends JavaPlugin {
             this.getLogger().log(Level.SEVERE, "'item_to_give' item named '" + itemToGive + "' does not exist!");
             throw new Exception("'item_to_give' item named '" + itemToGive + "' does not exist!");
         }
+    }
+
+    private void setupDatabase() {
+        try {
+            if (getDatabase() != null) {
+                getDatabase().find(PlayerPersistence.class).findRowCount();
+                return;
+            }
+        } catch (PersistenceException ex) {
+            //Install db, below
+        }
+        System.out.println("Installing database for " + getDescription().getName() + " due to first time usage");
+        installDDL();
+    }
+
+    @Override
+    public List<Class<?>> getDatabaseClasses() {
+        List<Class<?>> list = new ArrayList<Class<?>>();
+        list.add(PlayerPersistence.class);
+        return list;
     }
 }

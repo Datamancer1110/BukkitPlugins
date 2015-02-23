@@ -1,0 +1,10 @@
+name: PlayCatch
+description: Throw stuff at other players, and they'll catch them!
+author: Datamancer
+website: http://www.war-torn.net/forums/index.php
+main: com.tofurkishrobocracy.playcatch.PlayCatchPlugin
+version: ${version}
+commands:
+  playcatch:
+    description: Accesses the playcatch admin interface
+    usage: "Usage: '/playcatch help'"

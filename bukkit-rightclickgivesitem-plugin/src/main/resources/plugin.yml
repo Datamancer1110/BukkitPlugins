@@ -4,6 +4,7 @@ author: Datamancer
 website: http://www.war-torn.net/forums/index.php
 main: com.tofurkishrobocracy.rightclickgivesitem.RightClickGivesItemPlugin
 version: ${version}
+database: true
 commands:
   rightclickgivesitem:
     description: Accesses the right-click gives item admin interface

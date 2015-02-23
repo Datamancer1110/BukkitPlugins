@@ -1,0 +1,11 @@
+name: Change Race
+description: Such race. So quality. Wow.
+author: KungfuJoe
+website: http://www.war-torn.net/forums/index.php
+main: com.tofurkishrobocracy.changerace.ChangeRacePlugin
+version: ${version}
+database: true
+commands:
+  race:
+    description: Allows you to modify your race
+    usage: "Usage: '/race <set|unset|list> <krakenite|undead> <targetPlayer>'"

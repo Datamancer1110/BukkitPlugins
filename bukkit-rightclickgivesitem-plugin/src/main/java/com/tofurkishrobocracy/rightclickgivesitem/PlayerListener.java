@@ -63,7 +63,11 @@ public class PlayerListener implements Listener {
                 } else {
                     PlayerInventory pi = player.getInventory();
                     pi.addItem(new ItemStack(plugin.drop, 1));
-                    bannedTill = new Date(new Date().getTime() + (plugin.delayInSeconds * 1000));
+                    Integer delay = plugin.persistence.getDelayForPlayer(player);
+                    if (delay == null) {
+                        delay = plugin.delayInSeconds;
+                    }
+                    bannedTill = new Date(new Date().getTime() + (delay * 1000));
                     cooldowns.put(player.getUniqueId(), bannedTill);
                     player.updateInventory();
                     if (plugin.destroy) {
