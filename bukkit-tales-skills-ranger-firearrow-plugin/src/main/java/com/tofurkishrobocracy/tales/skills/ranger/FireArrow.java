@@ -68,7 +68,7 @@ public class FireArrow extends ActiveSkill {
         double motX = -Math.sin(yaw) * Math.cos(pitch);
         double motZ = Math.cos(yaw) * Math.cos(pitch);
         double motY = -Math.sin(pitch);
-        Vector velocity = new Vector(motX, motY, motZ);
+        Vector velocity = new Vector(motX, motY, motZ).multiply(3);
         Projectile arrow = player.launchProjectile(Arrow.class, velocity);
         arrows.add(arrow);
         broadcastExecuteText(hero);
